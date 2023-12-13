@@ -47,25 +47,25 @@ def main():
             'name': 'Andrea Calcagni',
             'role': 'Data Scientist & ML Engineer - Focus on Text Classification',
             'description': 'Andrea is a Business professional in Italy, specializing in industrial machinery and printed electronics. He is now actively pursuing expertise in data science and AI to pivot towards the tech industry.',
-            'image': '/Users/christine/code/ChristineSi/neuroCraft_front-end/resources/andrea.jpeg'
+            'image': './resources/andrea.jpeg'
         },
         {
             'name': 'Pei-Yu Chen',
             'role': 'Data Scientist & ML Engineer - Focus on Large Language Models',
             'description': 'Pei is a multilingual marketer who is fascinated by data science. She is now transitioning from digital marketing to combine language affinity with data precision.',
-            'image': '/Users/christine/code/ChristineSi/neuroCraft_front-end/resources/pei.jpeg'
+            'image': './resources/pei.jpeg'
         },
         {
             'name': 'Patricia Moreno Gaona',
             'role': 'Data Scientist & ML Engineer - Focus on Feature and Back-End Engineering',
             'description': 'Patricia is passionate about merging health and data for impactful solutions. She is a dedicated learner on a mission to revolutionize the tech and health industries.',
-            'image': '/Users/christine/code/ChristineSi/neuroCraft_front-end/resources/patricia.jpeg'
+            'image': './patricia.jpeg'
         },
         {
             'name': 'Christine Sigrist',
             'role': 'Data Scientist, ML Engineer, & Project Leader - Focus on Transformers and Web Interface',
             'description': 'Christine is a mental health professional and researcher passionate about solving problems with data. She is eager to make the transition from academia to industry.',
-            'image': '/Users/christine/code/ChristineSi/neuroCraft_front-end/resources/chris.jpeg'
+            'image': './resources/chris.jpeg'
         }
     ]
 
