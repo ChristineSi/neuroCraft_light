@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('./resources/OpenDyslexic-Regular.woff') format('woff'), /* WOFF format */
+       url('./resources/OpenDyslexic-Regular.otf') format('opentype'); /* OTF format */
+  /* additional font properties or font-weight could be set here */
+}
+
+/* apply the font-family to elements */
+html, body, [class*="css"] {
+  font-family: 'OpenDyslexic', sans-serif;
+  color: black;
+  /* additional styles */
+
+  /* Update the background color */
+  background-color: #EFDCA8; /* #F3E5AB /*#fffdd0; /* Cream color */
+}
+
+/* change the color of horizontal lines (markdown '***' syntax) */
+hr {
+  border-color: black; /* Set the color of horizontal lines to black */
+}
+
+* {
+  color: black;
+}
