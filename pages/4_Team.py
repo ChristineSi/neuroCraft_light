@@ -59,7 +59,7 @@ def main():
             'name': 'Patricia Moreno Gaona',
             'role': 'Data Scientist & ML Engineer - Focus on Feature and Back-End Engineering',
             'description': 'Patricia is passionate about merging health and data for impactful solutions. She is a dedicated learner on a mission to revolutionize the tech and health industries.',
-            'image': './patricia.jpeg'
+            'image': './resources/patricia.jpeg'
         },
         {
             'name': 'Christine Sigrist',
