@@ -5,6 +5,33 @@ from PIL import Image
 ################################################################################
 # Style aspects
 
+font_css = """
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('https://raw.githubusercontent.com/ChristineSi/neuroCraft_front-end/main/resources/OpenDyslexic-Regular.woff') format('woff'),
+       url('https://raw.githubusercontent.com/ChristineSi/neuroCraft_front-end/main/resources/OpenDyslexic-Regular.otf') format('opentype');
+}
+
+/* Apply the font-family to elements */
+body {
+  font-family: 'OpenDyslexic', sans-serif;
+  color: black;
+  background-color: #EFDCA8; /* Set your background color here */
+}
+
+/* Change the color of horizontal lines (markdown '***' syntax) */
+hr {
+  border-color: black; /* Set the color of horizontal lines to black */
+}
+
+* {
+  color: black;
+}
+"""
+
+# Apply the font and other styles using st.markdown with unsafe_allow_html=True
+st.markdown(f'<style>{font_css}</style>', unsafe_allow_html=True)
+
 # change font to "OpenDyslexic" as defined in the "font.css" file
 with open("./resources/font.css", "r") as file:
     css = file.read()
@@ -23,6 +50,7 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
 
 ################################################################################
 # Functions
