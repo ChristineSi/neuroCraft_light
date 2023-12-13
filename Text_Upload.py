@@ -5,17 +5,6 @@ from PIL import Image
 ################################################################################
 # Style aspects
 
-st.markdown(
-    """
-    <style>
-    body {
-        background-color: #EFDCA8;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 # change font to "OpenDyslexic" as defined in the "font.css" file
 with open("./resources/font.css", "r") as file:
     css = file.read()
