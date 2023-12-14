@@ -94,6 +94,7 @@ def main():
         text = extract_text_from_pdf(uploaded_file)
         st.session_state.extracted_text = text
         st.session_state.uploaded_filename = filename
+        st.session_state.uploaded_file = uploaded_file
         st.markdown('''
         ***
         ##### Extracted Text from PDF:

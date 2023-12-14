@@ -106,6 +106,36 @@ def simplify(text):
         st.error(f"Error simplifying text: {e}")
         return "Failed to simplify text"
 
+def simplify_pdf(text):
+    simplification_api_url = 'https://neurocraft-final-loe4rmocka-ew.a.run.app/pdf-simplification'
+    api_key = st.secrets.api_key
+    #payload = {'file': st.session_state.uploaded_file}
+    headers = {
+        'accept': 'application/json',
+        'Content-Type': 'multipart/form-data'
+    }
+    payload = {
+        'filename': st.session_state.uploaded_filename
+    }
+
+    try:
+        response = requests.post(simplification_api_url, headers=headers, files={'file': st.session_state.uploaded_file}, params=payload)
+
+        if response.status_code == 200:
+            response_data = response.json()
+            if isinstance(response_data, list) and len(response_data) > 0:
+                simplified_text = response_data[0]  # Accessing the first element in the list
+                simplified_text = simplified_text.strip('\"')  # Remove surrounding quotes
+                simplified_text = simplified_text.replace("\\", "")  # Remove escape characters
+                return simplified_text
+            else:
+                return "Simplified text not found in response"
+        else:
+            return f"Failed to simplify text. Status code: {response.status_code}"
+    except requests.RequestException as e:
+        st.error(f"Error simplifying text: {e}")
+        return "Failed to simplify text"
+
 
 # function to generate PDF from text
 def generate_pdf(text):

@@ -77,7 +77,7 @@ def mock_classify(text):
 
 # function to classify text via local API
 def classify(text):
-    classifier_api_url = 'https://neurocraft-loe4rmocka-ew.a.run.app/average-prediction'
+    classifier_api_url = 'https://neurocraft-final-loe4rmocka-ew.a.run.app/average-prediction'
     api_key = st.secrets.api_key
 
     payload = {'text': text}
