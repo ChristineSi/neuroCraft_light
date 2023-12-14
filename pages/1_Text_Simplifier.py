@@ -207,7 +207,7 @@ def main():
                 st.write(simplified_text)
 
                 pdf_data = generate_pdf(simplified_text)
-                st.markdown(get_binary_file_downloader_html(pdf_data, 'Simplified_Text.pdf', 'Download Simplified Text'), unsafe_allow_html=True)
+                get_binary_file_downloader_html(pdf_data, 'Simplified_Text.pdf', 'Download Simplified Text')
 
             else:
                 st.write("Simplified text not available or encountered an issue.")
