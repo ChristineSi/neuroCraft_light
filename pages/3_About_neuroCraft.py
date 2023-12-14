@@ -4,6 +4,17 @@ from PIL import Image
 ################################################################################
 # Style aspects
 
+# Increase the font size for all text elements
+global_css = """
+    body {
+        font-size: 18px !important;
+    }
+"""
+
+# Apply the global CSS using st.markdown with unsafe_allow_html=True
+st.markdown(f'<style>{global_css}</style>', unsafe_allow_html=True)
+
+
 font_css = """
 @font-face {
   font-family: 'OpenDyslexic';
@@ -102,6 +113,9 @@ def main():
             ''')
 
     st.markdown("<br>", unsafe_allow_html=True)
+
+
+    st.markdown('''***''')
 
     surfer = Image.open("./resources/surfer.jpeg")
 

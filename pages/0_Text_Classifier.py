@@ -5,6 +5,17 @@ from PIL import Image
 ################################################################################
 # Style aspects
 
+# Increase the font size for all text elements
+global_css = """
+    body {
+        font-size: 18px !important;
+    }
+"""
+
+# Apply the global CSS using st.markdown with unsafe_allow_html=True
+st.markdown(f'<style>{global_css}</style>', unsafe_allow_html=True)
+
+
 font_css = """
 @font-face {
   font-family: 'OpenDyslexic';
@@ -82,7 +93,7 @@ def classify(text):
             result = response.text
             classification_mapping = {
                 '0': "Hard to read.",
-                '1': "Not so easy, but also not too hard to read.",
+                '1': "Intermediate.",
                 '2': "Easy to read."
             }
 
@@ -117,15 +128,29 @@ def main():
         filename = st.session_state.uploaded_filename
         st.write(f"Uploaded file: {filename}")
         st.write("***")
-        if st.button("Classify Text"):
-            classification_result = classify(text)
-            st.markdown('''
-            ##### This Text is:
-            ''')
-            st.write(classification_result)
 
-            st.write("---")
-            st.write("Go to the **Text Simplifier** page if you want to simplify the uploaded text.")
+    if st.button("Classify Text"):
+        classification_result = classify(text)
+        st.markdown('''
+        ##### This Text is:
+        ''')
+
+        # Mapping difficulty levels to colors
+        color_mapping = {
+            'Hard to read.': 'red',
+            'Intermediate.': 'yellow',
+            'Easy to read.': 'green'
+        }
+
+        # Get the color based on the classification result
+        color = color_mapping.get(classification_result, 'black')
+
+        # Highlight the classification result using formatting and the determined color
+        highlighted_result = f"<span style='font-size: 20px; background-color: {color}; padding: 5px;'>{classification_result}</span>"
+        st.markdown(highlighted_result, unsafe_allow_html=True)
+
+        st.write("---")
+        st.write("Go to the **Text Simplifier** page if you want to simplify the uploaded text.")
 
     # check if the classification is not "easy" (can be implemented after the API is running)
     # if classification_result != 2:
